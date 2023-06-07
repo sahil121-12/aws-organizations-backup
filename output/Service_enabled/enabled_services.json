@@ -1,0 +1,36 @@
+{
+    "EnabledServices": [
+        {
+            "ServicePrincipal": "account.amazonaws.com",
+            "DateEnabled": "2023-06-06T10:38:35.753000+05:30"
+        },
+        {
+            "ServicePrincipal": "config-multiaccountsetup.amazonaws.com",
+            "DateEnabled": "2023-05-29T17:57:20.776000+05:30"
+        },
+        {
+            "ServicePrincipal": "config.amazonaws.com",
+            "DateEnabled": "2023-05-30T12:48:08.483000+05:30"
+        },
+        {
+            "ServicePrincipal": "fms.amazonaws.com",
+            "DateEnabled": "2023-06-05T15:04:47.714000+05:30"
+        },
+        {
+            "ServicePrincipal": "guardduty.amazonaws.com",
+            "DateEnabled": "2023-06-06T13:01:58.654000+05:30"
+        },
+        {
+            "ServicePrincipal": "malware-protection.guardduty.amazonaws.com",
+            "DateEnabled": "2023-06-06T15:22:33.826000+05:30"
+        },
+        {
+            "ServicePrincipal": "securityhub.amazonaws.com",
+            "DateEnabled": "2023-05-29T13:04:46.919000+05:30"
+        },
+        {
+            "ServicePrincipal": "sso.amazonaws.com",
+            "DateEnabled": "2023-05-08T10:17:18.941000+05:30"
+        }
+    ]
+}
