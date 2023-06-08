@@ -17,6 +17,10 @@
             "DateEnabled": "2023-06-05T15:04:47.714000+05:30"
         },
         {
+            "ServicePrincipal": "guardduty.amazonaws.com",
+            "DateEnabled": "2023-06-08T16:36:53.372000+05:30"
+        },
+        {
             "ServicePrincipal": "malware-protection.guardduty.amazonaws.com",
             "DateEnabled": "2023-06-06T15:22:33.826000+05:30"
         },
