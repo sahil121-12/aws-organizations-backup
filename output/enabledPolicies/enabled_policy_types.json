@@ -1,0 +1,5 @@
+{
+    "AISERVICES_OPT_OUT_POLICY": "enabled",
+    "BACKUP_POLICY": "enabled",
+    "TAG_POLICY": "enabled"
+}
