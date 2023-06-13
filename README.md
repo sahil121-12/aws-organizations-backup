@@ -6,20 +6,23 @@ This project aims to solve the following problem:
 
 The project aims to provide a comprehensive solution for managing AWS Organization dependencies, such as retrieving account details, listing and retrieving policy information, and enabling specific AWS services. By leveraging the provided scripts and directories, users can gain insights into their organization's configuration and take necessary actions based on the collected information.
 
-## Permissions Required (Json Policy)
 
 
+## Permissions Required (JSON Policy)
 
 To successfully execute the scripts and access the necessary resources, the following AWS Identity and Access Management (IAM) permissions should be assigned to the user or role executing the project:
 
-    -organizations:ListAccounts - Required to retrieve the list of enabled AWS accounts within the organization.
-    -organizations:DescribeAccount - Needed to fetch detailed information about individual AWS accounts.
-    -organizations:ListPolicies - Required to list the various types of policies within the organization.
-    -organizations:DescribePolicy - Needed to retrieve the content and details of specific policies.
-    -organizations:EnableAWSServiceAccess - Required to enable specific AWS services within the organization.
-    -Additional permissions may be necessary depending on the specific actions performed by the scripts.
+1. `organizations:DescribeOrganization` - Required to retrieve information about the AWS Organization.
+2. `organizations:ListAccounts` - Needed to list the AWS accounts within the organization.
+3. `organizations:ListAWSServiceAccessForOrganization` - Required to list the AWS services enabled for the organization.
+4. `organizations:ListRoots` - Required to list the roots in the organization.
+5. `organizations:DescribePolicyType` - Required to describe the policy types associated with the organization's roots.
+6. `organizations:ListPolicies` - Required to list the policies in the organization.
+7. `organizations:DescribePolicy` - Required to describe the details of a specific policy.
+8. `organizations:ListTargetsForPolicy` - Required to list the targets associated with a policy.
 
 Ensure that the user or role executing the scripts has the appropriate permissions assigned to successfully interact with the AWS Organizations service and access the required resources.
+
 
 
 
