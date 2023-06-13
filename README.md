@@ -12,12 +12,12 @@ The project aims to provide a comprehensive solution for managing AWS Organizati
 
 To successfully execute the scripts and access the necessary resources, the following AWS Identity and Access Management (IAM) permissions should be assigned to the user or role executing the project:
 
-    organizations:ListAccounts - Required to retrieve the list of enabled AWS accounts within the organization.
-    organizations:DescribeAccount - Needed to fetch detailed information about individual AWS accounts.
-    organizations:ListPolicies - Required to list the various types of policies within the organization.
-    organizations:DescribePolicy - Needed to retrieve the content and details of specific policies.
-    organizations:EnableAWSServiceAccess - Required to enable specific AWS services within the organization.
-    Additional permissions may be necessary depending on the specific actions performed by the scripts.
+    -organizations:ListAccounts - Required to retrieve the list of enabled AWS accounts within the organization.
+    -organizations:DescribeAccount - Needed to fetch detailed information about individual AWS accounts.
+    -organizations:ListPolicies - Required to list the various types of policies within the organization.
+    -organizations:DescribePolicy - Needed to retrieve the content and details of specific policies.
+    -organizations:EnableAWSServiceAccess - Required to enable specific AWS services within the organization.
+    -Additional permissions may be necessary depending on the specific actions performed by the scripts.
 
 Ensure that the user or role executing the scripts has the appropriate permissions assigned to successfully interact with the AWS Organizations service and access the required resources.
 
