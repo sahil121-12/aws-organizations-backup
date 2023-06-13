@@ -1,5 +1,6 @@
 # AWS Organization Dependency
 ## Overview 
+: By using this reposi
 
 - **enabledAccounts**: Contains the code related to retrieving details of enabled accounts.
     - accountDetail.py: Python script for retrieving account details.
@@ -34,8 +35,10 @@ To use this project, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Install the required dependencies listed in `requirement.txt`.
-3. '''pip install -r requirements.txt'''
-4. 
+3.  ##### Make sure you run this command before running the `main.py`.
+            : pip3 install -r requirement.txt
+         
+
 5. Modify the scripts or add new functionality as needed.
 6. Execute `main.py` to run the project.
 7. Check the output files in the `output` directory for the generated results.
