@@ -6,22 +6,29 @@ def get_enabled_policy_types():
     # Create an Organizations client
     client = boto3.client('organizations')
 
-    # List the roots
-    response = client.list_roots()
+    # Create a paginator for listing roots
+    paginator = client.get_paginator('list_roots')
 
-    # Get the policy types
-    policy_types = response['Roots'][0]['PolicyTypes']
+    # Set the pagination parameters
+    pagination_config = {'MaxItems': 1}  # Update the MaxItems value as desired
+
+    # Retrieve the list of roots
+    response_iterator = paginator.paginate(PaginationConfig=pagination_config)
 
     # Create a dictionary to store enabled policy types
     enabled_policy_types = {}
 
-    # Iterate over the policy types
-    for policy_type in policy_types:
-        policy_type_name = policy_type['Type']
-        policy_type_status = policy_type['Status']
+    # Iterate over the pages of roots
+    for response in response_iterator:
+        roots = response['Roots']
+        for root in roots:
+            policy_types = root['PolicyTypes']
+            for policy_type in policy_types:
+                policy_type_name = policy_type['Type']
+                policy_type_status = policy_type['Status']
 
-        if policy_type_status == 'ENABLED':
-            enabled_policy_types[policy_type_name] = 'enabled'
+                if policy_type_status == 'ENABLED':
+                    enabled_policy_types[policy_type_name] = 'enabled'
 
     # Convert the output to JSON format
     output = json.dumps(enabled_policy_types, indent=4)
@@ -40,4 +47,4 @@ def get_enabled_policy_types():
         file.write(output)
 
 # Call the function to get enabled policy types and save the output in a JSON file
-
+get_enabled_policy_types()
