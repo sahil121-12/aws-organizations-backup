@@ -37,8 +37,8 @@ To use this project, follow these steps:
 2. Install the required dependencies listed in `requirement.txt`.
 3.   Make sure you run this command before running the `main.py`.
             
-    ```bash
-        pip3 install -r requirement.txt
+```bash
+pip3 install -r requirement.txt
 
 
 5. Modify the scripts or add new functionality as needed.
