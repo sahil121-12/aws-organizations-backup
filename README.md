@@ -38,15 +38,14 @@ To use this project, follow these steps:
 git clone https://github.com/sahil1202-12/aws-org-dependency-analyzer
 ```
 3. Install the required dependencies listed in `requirement.txt`.
-4.   Make sure you run this command before running the `main.py`.
             
 ```bash
 pip3 install -r requirement.txt
 ```
-
-5. Modify the scripts or add new functionality as needed.
-6. Execute `main.py` to run the project.
-7. Check the output files in the `output` directory for the generated results.
+5.   Make sure you run this command before running the `main.py`.
+6. Modify the scripts or add new functionality as needed.
+7. Execute `main.py` to run the project.
+8. Check the output files in the `output` directory for the generated results.
 
 Feel free to explore each directory and file for more detailed information about their respective contents and functionalities.
 
