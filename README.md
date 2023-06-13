@@ -1,6 +1,6 @@
 # AWS Organization Dependency
 ## Overview 
-: By using this repository :https://github.com/sahil1202-12/aws-org-dependency-analyzer.git
+  Repository content :https://github.com/sahil1202-12/aws-org-dependency-analyzer.git
 
 - **enabledAccounts**: Contains the code related to retrieving details of enabled accounts.
     - accountDetail.py: Python script for retrieving account details.
