@@ -39,7 +39,7 @@ To use this project, follow these steps:
             
 ```bash
 pip3 install -r requirement.txt
-
+```
 
 5. Modify the scripts or add new functionality as needed.
 6. Execute `main.py` to run the project.
