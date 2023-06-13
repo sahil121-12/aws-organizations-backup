@@ -6,9 +6,9 @@
     - accountDetail.py: Python script for retrieving account details.
 
 - **enabledPolicies**: Contains the code related to different types of enabled policies.
+    ##- enabledPolicy.py: Python script for retrieving enabled policy types.
     - aiPolicies.py: Python script for retrieving AI policies.
     - backupPolicies.py: Python script for retrieving backup policies.
-    - enabledPolicy.py: Python script for retrieving enabled policy types.
     - scpPolicies.py: Python script for retrieving SCP policies.
     - tagPolicies.py: Python script for retrieving tag policies.
 
