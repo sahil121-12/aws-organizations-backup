@@ -15,21 +15,34 @@ In summary, AWS Organizations Backup simplifies the process of capturing and sto
 ## Permissions Required 
 
 To successfully execute the scripts and access the necessary resources, the following AWS Identity and Access Management (IAM) permissions should be assigned to the user or role executing the project:
-
-1. `organizations:DescribeOrganization` - Required to retrieve information about the AWS Organization.
-2. `organizations:ListAccounts` - Needed to list the AWS accounts within the organization.
-3. `organizations:ListAWSServiceAccessForOrganization` - Required to list the AWS services enabled for the organization.
-4. `organizations:ListRoots` - Required to list the roots in the organization.
-5. `organizations:DescribePolicyType` - Required to describe the policy types associated with the organization's roots.
-6. `organizations:ListPolicies` - Required to list the policies in the organization.
-7. `organizations:DescribePolicy` - Required to describe the details of a specific policy.
-8. `organizations:ListTargetsForPolicy` - Required to list the targets associated with a policy.
-
 Ensure that the user or role executing the scripts has the appropriate permissions assigned to successfully interact with the AWS Organizations service and access the required resources.
 
-<<<<<<< HEAD
+You have two options for granting the necessary permissions:
+1. Grant the user or role the built-in AWS managed policy called "AWSOrganizationsReadOnlyAccess."
+2. Create a custom IAM policy with the required permissions mentioned above.
 
-=======
+If you choose to create a custom IAM policy, you can use the following JSON policy document as a reference:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "organizations:DescribeOrganization",
+                "organizations:ListAccounts",
+                "organizations:ListAWSServiceAccessForOrganization",
+                "organizations:ListRoots",
+                "organizations:DescribePolicyType",
+                "organizations:ListPolicies",
+                "organizations:DescribePolicy",
+                "organizations:ListTargetsForPolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 Check out the following GIF to see the complete procedure of getting AWS Organization Dependency. 
 ![GIF](https://github.com/sahil121-12/aws-organizations-backup/blob/main/all-steps.gif)
 >>>>>>> c49118fdd4386495edc91d3c5190837d72cac3b2
