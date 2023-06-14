@@ -23,7 +23,8 @@ To successfully execute the scripts and access the necessary resources, the foll
 
 Ensure that the user or role executing the scripts has the appropriate permissions assigned to successfully interact with the AWS Organizations service and access the required resources.
 
-
+Check out the following GIF to see the complete procedure of getting AWS Organization Dependency. 
+![GIF](/home/sahil/Downloads/all-steps.gif)
 
 
 ## Getting Started
