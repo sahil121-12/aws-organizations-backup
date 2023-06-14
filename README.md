@@ -47,7 +47,11 @@ If you choose to create a custom IAM policy, you can use the following JSON poli
 
 
 
+
+
 Check out the following GIF to see the complete procedure of getting AWS Organization Dependency. 
+
+
 ![GIF](https://github.com/sahil121-12/aws-organizations-backup/blob/main/all-steps.gif)
 >>>>>>> c49118fdd4386495edc91d3c5190837d72cac3b2
 
