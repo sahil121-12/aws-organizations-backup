@@ -1,6 +1,8 @@
-# AWS Organization Dependency
+# AWS Organizations Backup
 
 ## Problem Statement
+
+AWS Organizations is a service provided by Amazon Web Services (AWS) that allows you to centrally manage and govern multiple AWS accounts. It provides a way to organize your accounts into a hierarchical structure and apply policies across the organization.
 
 This project aims to solve the following problem:
 
