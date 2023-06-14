@@ -1,6 +1,7 @@
 import boto3
 import json
 import os
+import csv
 from datetime import datetime
 
 def serialize_datetime(obj):
@@ -28,14 +29,14 @@ def list_enabled_services():
             service_principal = service['ServicePrincipal'].split(".")[0]
             date_enabled = service['DateEnabled']
             service_object = {
-                'ServicePrincipal': service_principal,
-                'DateEnabled': date_enabled
+                'Service Principal': service_principal,
+                'Date Enabled': date_enabled
             }
             service_objects.append(service_object)
 
     # Create a dictionary with the list of service objects
     data = {
-        'EnabledServices': service_objects
+        'Enabled Services': service_objects
     }
 
     # Convert datetime objects to string representation
@@ -43,27 +44,35 @@ def list_enabled_services():
 
     # Find the output folder path
     current_directory = os.getcwd()
-    output_folder = None
-    for root, dirs, files in os.walk(current_directory):
-        if 'output' in dirs:
-            output_folder = os.path.join(root, 'output')
-            break
+    output_folder = os.path.join(current_directory, 'output')
 
     # Create the output folder if it doesn't exist
-    if output_folder is None:
-        raise Exception("Output folder not found.")
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
 
-    # Specify the output file path
-    service_enabled_folder = os.path.join(output_folder, 'serviceEnabled')
-    output_file = os.path.join(service_enabled_folder, 'enabled_services.json')
+    # Specify the output file paths
+    json_file_path = os.path.join(output_folder, 'serviceEnabled', 'enabled_services.json')
+    csv_file_path = os.path.join(output_folder, 'serviceEnabled', 'enabled_services.csv')
 
-    # Create the Service_enabled folder if it doesn't exist
-    if not os.path.exists(service_enabled_folder):
-        os.makedirs(service_enabled_folder)
-
-    # Write the enabled services to a JSON file in the specified folder
-    with open(output_file, 'w') as file:
+    # Write the enabled services to a JSON file
+    with open(json_file_path, 'w') as file:
         file.write(data_serialized)
 
     print("JSON file generated successfully with enabled services.")
+
+    # Convert JSON to CSV
+    csv_data = []
+    header = ["Service Principal", "Date Enabled"]
+    csv_data.append(header)
+
+    for service in service_objects:
+        row = [service['Service Principal'], service['Date Enabled']]
+        csv_data.append(row)
+
+    with open(csv_file_path, 'w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerows(csv_data)
+
+    print("CSV file generated successfully from JSON.")
+
 

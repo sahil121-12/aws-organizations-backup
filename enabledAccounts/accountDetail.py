@@ -1,6 +1,7 @@
 import boto3
 import json
 import os
+import csv
 
 def get_account_details():
     client = boto3.client('organizations')
@@ -60,17 +61,37 @@ def get_account_details():
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # Specify the output file path
+    # Specify the output file paths
     account_details_folder = os.path.join(output_folder, 'accountDetails')
-    output_file = os.path.join(account_details_folder, 'account_details.json')
+    json_file = os.path.join(account_details_folder, 'account_details.json')
+    csv_file = os.path.join(account_details_folder, 'account_details.csv')
 
     # Create the Account details folder if it doesn't exist
     if not os.path.exists(account_details_folder):
         os.makedirs(account_details_folder)
 
-    # Write the account details to a JSON file in the specified folder
-    with open(output_file, 'w') as file:
+    # Write the account details to a JSON file
+    with open(json_file, 'w') as file:
         json.dump(account_details, file, indent=4)
 
     print("JSON file generated successfully with account details.")
+
+    # Convert JSON to CSV
+    with open(json_file, 'r') as json_file:
+        data = json.load(json_file)
+
+    csv_data = []
+    header = data[0].keys() if data else []
+    csv_data.append(header)
+
+    for item in data:
+        row = [item[key] for key in header]
+        csv_data.append(row)
+
+    with open(csv_file, 'w', newline='\n') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerows(csv_data)
+
+    print("CSV file generated successfully from JSON.")
+
 
