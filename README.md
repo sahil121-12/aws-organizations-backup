@@ -4,13 +4,15 @@
 
 AWS Organizations is a service provided by Amazon Web Services (AWS) that allows you to centrally manage and govern multiple AWS accounts. It provides a way to organize your accounts into a hierarchical structure and apply policies across the organization.
 
-This project aims to solve the following problem:
+The AWS Organizations Backup tool provides users with the ability to capture and backup various details related to their AWS accounts. It offers features to retrieve and store information such as account details, enabled services, enabled policy types, and policies.
 
-The project aims to provide a comprehensive solution for managing AWS Organization dependencies, such as retrieving account details, listing and retrieving policy information, and enabling specific AWS services. By leveraging the provided scripts and directories, users can gain insights into their organization's configuration and take necessary actions based on the collected information.
+By using this tool, users can gain insights into the changes made within their accounts and track important information. The backup process ensures that important data is preserved, allowing for easy reference and analysis.
+
+In summary, AWS Organizations Backup simplifies the process of capturing and storing vital details about AWS accounts, providing users with a comprehensive view of their account configuration and changes over time.
 
 
 
-## Permissions Required (JSON Policy)
+## Permissions Required 
 
 To successfully execute the scripts and access the necessary resources, the following AWS Identity and Access Management (IAM) permissions should be assigned to the user or role executing the project:
 
