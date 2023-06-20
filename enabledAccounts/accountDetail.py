@@ -70,9 +70,14 @@ def get_account_details():
     if not os.path.exists(account_details_folder):
         os.makedirs(account_details_folder)
 
+    # Wrap the account details dictionary with the key "Account Details"
+    data = {
+        'Account Details': account_details
+    }
+
     # Write the account details to a JSON file
     with open(json_file, 'w') as file:
-        json.dump(account_details, file, indent=4)
+        json.dump(data, file, indent=4)
 
     print("JSON file generated successfully with account details.")
 
@@ -81,10 +86,10 @@ def get_account_details():
         data = json.load(json_file)
 
     csv_data = []
-    header = data[0].keys() if data else []
+    header = data['Account Details'][0].keys() if data['Account Details'] else []
     csv_data.append(header)
 
-    for item in data:
+    for item in data['Account Details']:
         row = [item[key] for key in header]
         csv_data.append(row)
 
