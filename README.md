@@ -79,10 +79,6 @@ pip3 install -r requirement.txt
 python3 main.py
 ```
 5. Check the output files in the `output` directory for the generated results.
-for eg:
-```bash
-cd output 
-cd accountDetails
-cat account_details.json
-```
+
+
 
