@@ -10,7 +10,7 @@ AWS Organizations is a service provided by Amazon Web Services (AWS) that allows
 
   2. By using this tool, users can gain insights into the changes made within their accounts and track important information. The backup process ensures that        important data is preserved, allowing for easy reference and analysis.
 
-  3. In summary, AWS Organizations Backup simplifies the process of capturing and storing vital details about AWS accounts,Servies that are enabled and policy      type that is enabled in AWS organizations , Providing users with a comprehensive  view of their account configuration and changes over time.
+  3. In summary, AWS Organizations Backup simplifies the process of capturing and storing vital details about AWS accounts,Services that are enabled and policy      type that is enabled in AWS organizations , Providing users with a comprehensive  view of their account configuration and changes over time.
 
 ## Permissions Required 
 
