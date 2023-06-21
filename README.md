@@ -67,8 +67,8 @@ To use this project, follow these steps:
 
 1. Clone the repository to your local machine.
 ```bash
-git clone https://github.com/sahil1202-12/aws-org-dependency-analyzer
-cd aws-org-dependency-analyzer
+git clone https://github.com/sahil121-12/aws-organizations-backup
+cd aws-organizations-backup
 ```
 2. Install the required dependencies listed in `requirement.txt`.
             
