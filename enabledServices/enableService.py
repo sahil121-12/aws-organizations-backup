@@ -27,8 +27,10 @@ def list_enabled_services():
         # Populate the list with the service objects
         for service in enabled_services:
             service_principal = service['ServicePrincipal']
+            service_name = service_principal.split(".")[0]
+            service_name = service_name.title()  # Capitalize each word
             service_object = {
-                service_principal: service_principal.split(".")[0]
+                service_principal: service_name
             }
             service_objects.append(service_object)
 
