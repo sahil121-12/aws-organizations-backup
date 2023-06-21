@@ -75,14 +75,12 @@ cd aws-organizations-backup
 ```bash
 pip3 install -r requirement.txt
 ```
-3. Make sure you run the above command before running the `main.py`.
 
-
-4. Execute `main.py` to run the project.
+3. Execute `main.py` to run the project.
 ```bash
 python3 main.py
 ```
-5. Check the output files in the `output` directory for the generated results.
+4. Check the output files in the `output` directory for the generated results.
 
 
 
