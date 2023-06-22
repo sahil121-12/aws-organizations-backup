@@ -44,10 +44,10 @@ def get_account_details():
 
             # Create a dictionary for the account details
             account_info = {
-                'Account ID': account_id,
-                'Account Name': account_name,
-                'Account Email': account_email,
-                'Account Type': account_type
+                'account-id': account_id,
+                'account-name': account_name,
+                'account-email': account_email,
+                'account-type': account_type
             }
 
             # Add the account details to the list
