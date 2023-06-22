@@ -118,12 +118,7 @@ def list_enabled_services():
         # Populate the list with the service objects
         for service in enabled_services:
             service_principal = service['ServicePrincipal']
-<<<<<<< HEAD
-            service_name = service_principal.split(".")[0]
-            service_name = service_name.title()  # Capitalize each word
-=======
             service_name = service_config.get(service_principal, 'Unknown')
->>>>>>> bc4bdc8 (added to new branch)
             service_object = {
                 service_principal: service_name
             }
@@ -170,5 +165,4 @@ def list_enabled_services():
         writer.writerows(csv_data)
 
     print("CSV file generated successfully from JSON.")
-
 
