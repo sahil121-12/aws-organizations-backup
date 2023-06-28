@@ -11,7 +11,7 @@ import click
 @click.option('--service', is_flag=True, help='Run the service module')
 @click.option('--policytype', is_flag=True, help='Run the policy module')
 @click.option('--delegated', is_flag=True, help='Run the delegated module')
-@click.option('--policies', multiple=True, type=click.Choice(['scp', 'tag', 'backup', 'ai']), default=[], help='Run specific policy modules')
+@click.option('--policies', multiple=True, type=click.Choice(['scp', 'tag', 'backup', 'ai','All']), default=[], help='Run specific policy modules')
 
 @click.option('--all', is_flag=True, help='Run the all module')
 
@@ -42,13 +42,19 @@ def run_modules(account, service,policytype,delegated,policies,all):
                 click.echo("Running SCP policy module")
                 scp_policies_module_function()
             elif policy == 'tag':
-                click.echo("Running Tag policy module")
-                tag_policies_module_function()
+                click.echo("Runn tag_policies_module_function()ing Tag policy module")
+               
             elif policy == 'backup':
                 click.echo("Running Backup policy module")
                 backup_policies_module_function()
             elif policy == 'ai':
                 click.echo("Running AI policy module")
+                ai_policies_module_function()
+            elif policy == 'All':
+                click.echo("Running All policy module")
+                scp_policies_module_function()
+                tag_policies_module_function()
+                backup_policies_module_function()
                 ai_policies_module_function()
             else:
                 click.echo(f"Unknown policy module: {policy}")
@@ -109,5 +115,6 @@ def ai_policies_module_function():
     aiPolicies.list_ai_policies()
     
 run_modules()
+
 
 
