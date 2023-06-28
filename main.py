@@ -26,94 +26,116 @@
 #  scpPolicies.list_scp_policies()
 #  tagPolicies.list_tag_policies()
 # main()
-
-
-
 from enabledAccounts import accountDetail
-from enabledPolices import aiPolicies,backupPolicies,scpPolicies,tagPolicies,enabledPolicy
+from enabledPolices import aiPolicies, backupPolicies, scpPolicies, tagPolicies, enabledPolicy
 from enabledServices import enableService
 from delegatedAdmin import delegatedAdmin
+
 
 import click
 
 @click.command()
-@click.option('-all', is_flag=True, help='Get all data')
-@click.option('-p', is_flag=True, help='Only get Policy JSONs')
-@click.option('-s', is_flag=True, help='Only get Service enabled JSONs')
-@click.option('-a', is_flag=True, help='Only get account detail JSONs')
-@click.option('-t', is_flag=True, help='Only get policy type enabled JSONs')
-def main(all, p,s,a,t):
+@click.option('--account', is_flag=True, help='Run the account module')
+@click.option('--service', is_flag=True, help='Run the service module')
+@click.option('--policytype', is_flag=True, help='Run the policy module')
+@click.option('--delegated', is_flag=True, help='Run the delegated module')
+@click.option('--policies', multiple=True, type=click.Choice(['scp', 'tag', 'backup', 'ai']), default=[], help='Run specific policy modules')
+
+@click.option('--all', is_flag=True, help='Run the all module')
+
+
+
+
+def run_modules(account, service,policytype,delegated,policies,all):
+    if account:
+        click.echo("Running account module")
+        account_module_function()
+    
+    if service:
+        click.echo("Running service module")
+        service_module_function()
+    if policytype:
+        click.echo("Running policytype module")
+        policytype_module_function()
+    if delegated:
+        click.echo("Running delegated module")
+        delegatedadmin_module_function()
+    
+
+
+    if policies:
+        click.echo("Running policy modules: {}".format(', '.join(policies)))
+        for policy in policies:
+            if policy == 'scp':
+                click.echo("Running SCP policy module")
+                scp_policies_module_function()
+            elif policy == 'tag':
+                click.echo("Running Tag policy module")
+                tag_policies_module_function()
+            elif policy == 'backup':
+                click.echo("Running Backup policy module")
+                backup_policies_module_function()
+            elif policy == 'ai':
+                click.echo("Running AI policy module")
+                ai_policies_module_function()
+            else:
+                click.echo(f"Unknown policy module: {policy}")
+
+    
+    
     if all:
-        # Handle the case of getting all data
-        click.echo('Getting all data...')
-        
-
-        #This function call will retrieve all the enabled services in the aws organization
-        enableService.list_enabled_services()
-
-
-
-        #This function call will retrieve all the accounts details in the aws organization
-        accountDetail.get_account_details()
+        click.echo("Running all  module")
+        account_module_function()
+        service_module_function()
+        policytype_module_function()
+        delegatedadmin_module_function()
+        allpolicies_module_function()
 
 
-        #This function call will retrieve all the enabled policy type  in the aws organization
-        enabledPolicy.get_enabled_policy_types()
+
+def account_module_function():
+    click.echo("This is the account module")
+    accountDetail.get_account_details()
+
+def service_module_function():
+    click.echo("This is the service module")
+    enableService.list_enabled_services()
+    
 
 
-        delegatedAdmin.list_delegated_administrators()
+def policytype_module_function():
+    click.echo("This is the account module")
+    enabledPolicy.get_enabled_policy_types()
 
+def delegatedadmin_module_function():
+    click.echo('Running delegatedadmin...')
+    delegatedAdmin.list_delegated_administrators()
 
-        #This function main is used to retrieve all the policy the list all the policies
-        def main():
+def allpolicies_module_function():
+    click.echo('Running all policies...')
+    def main():
          aiPolicies.list_ai_policies()
          backupPolicies.list_backup_policies()
          scpPolicies.list_scp_policies()
          tagPolicies.list_tag_policies()
-        main()
+    main()
 
+def scp_policies_module_function():
     
-    elif s:
-       click.echo('Getting Service enabled...')
-
-        #This function call will retrieve all the enabled services in the aws organization
-       enableService.list_enabled_services()
+    scpPolicies.list_scp_policies()
 
 
-    elif a:
+def tag_policies_module_function():
     
-       click.echo('Getting account detail...')
-       #This function call will retrieve all the accounts details in the aws organization
-       accountDetail.get_account_details()
-
-
-
+    tagPolicies.list_tag_policies()
+def backup_policies_module_function():
     
-    elif t:
+    backupPolicies.list_backup_policies()
+
+def ai_policies_module_function():
     
-       click.echo('Getting policy type enabled...')
-       #This function call will retrieve all the enabled policy type  in the aws organization
-       enabledPolicy.get_enabled_policy_types()
-     
- 
-               
-
-    elif p:
-        # Handle the case of getting Policy JSONs
-        click.echo('Getting Policy JSONs...')
-        # Your logic here to process Policy JSONs
-        def main():
-         aiPolicies.list_ai_policies()
-         backupPolicies.list_backup_policies()
-         scpPolicies.list_scp_policies()
-         tagPolicies.list_tag_policies()
-        main()
-
-    else:
-        # Handle the case of no option provided
-        click.echo('No valid option specified. Please use -all or -p.')
-
-
-
-main()
+    aiPolicies.list_ai_policies()
     
+run_modules()
+
+
