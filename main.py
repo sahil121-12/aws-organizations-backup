@@ -13,7 +13,6 @@ import click
 
 
 @click.option('--delegated', is_flag=True, help='fetch delegated admin details')
-# @click.option('--policies', multiple=True, type=click.Choice(['scp', 'tag', 'backup', 'ai','All']), default=[], help='fetch specific policy and all policies')
 @click.option('--policies', type=str, default='', help='fetch specific policy and all policies')
 @click.option('--all', is_flag=True, help='fetch all details')
 
