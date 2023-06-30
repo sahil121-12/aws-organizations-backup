@@ -35,7 +35,6 @@ If you choose to create a custom IAM policy, you can use the following JSON poli
                 "organizations:ListAccounts",
                 "organizations:ListAWSServiceAccessForOrganization",
                 "organizations:ListRoots",
-                "organizations:DescribePolicyType",
                 "organizations:ListPolicies",
                 "organizations:DescribePolicy",
                 "organizations:ListTargetsForPolicy",
