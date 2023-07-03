@@ -62,7 +62,7 @@ If you choose to create a custom IAM policy, you can use the following JSON poli
 Check out the following GIF to see the complete procedure of getting AWS Organizations Backup. 
 
 
-[GIF](https://github.com/sahil121-12/aws-organizations-backup/blob/main/File.gif)
+[GIF](https://github.com/sahil121-12/aws-organizations-backup/blob/integration/File.gif)
 
 To use this project, follow these steps:
 
