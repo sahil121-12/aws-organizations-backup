@@ -1,3 +1,4 @@
+
 from enabledAccounts import accountDetail
 from enabledPolices import aiPolicies, backupPolicies, scpPolicies, tagPolicies, enabledPolicy
 from enabledServices import enableService
@@ -5,18 +6,13 @@ from delegatedAdmin import delegatedAdmin
 
 
 import click
-
 @click.command()
-@click.option('--account', is_flag=True, help='fetch account details')
-@click.option('--service', is_flag=True, help='fetch services enabled')
-@click.option('--policytype', is_flag=True, help='fetch policy type enabled')
-
-
-@click.option('--delegated', is_flag=True, help='fetch delegated admin details')
-@click.option('--policies', type=str, default='', help='fetch specific policy and all policies')
-@click.option('--all', is_flag=True, help='fetch all details')
-
-
+@click.option('--account', '--a', is_flag=True, help='fetch account details')
+@click.option('--service', '--s', is_flag=True, help='fetch services enabled')
+@click.option('--policytype', '--p', is_flag=True, help='fetch policy type enabled')
+@click.option('--delegated', '--d', is_flag=True, help='fetch delegated admin details')
+@click.option('--policies', '--pol', type=str, default='', help='fetch specific policy and all policies')
+@click.option('--all', '--al', is_flag=True, help='fetch all details')
 
 def run_modules(account, service,policytype,delegated,policies,all):
     if account:
