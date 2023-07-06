@@ -9,10 +9,10 @@ AWS Organizations is a service provided by Amazon Web Services (AWS) that allows
  
 - AWS Organizations Backup is a tool designed to capture and backup important details of your AWS accounts.
 - It allows you to retrieve and store information such as 
-    Retrieve account details.
-    Enable services.
-    Manage policies.
-    Delegate administrative access.
+    -Retrieve account details.
+    -Enable services.
+    -Manage policies.
+    -Delegate administrative access.
 
   
 ## Permissions Required 
