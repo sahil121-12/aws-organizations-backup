@@ -102,7 +102,8 @@ pip3 install -r requirement.txt
     ```bash
          python3 main.py --policytype
     ```
-     - To retrieve policies like scp,ai,backup,tag ,You can use multiple arrgument also in this like  :
+     - To retrieve policies like scp,ai,backup,tag :
+      - In this you can use multiple arguments also like scp,ai,tag,backup,all 
     ```bash
          python3 main.py --policies scp,ai 
     ```
