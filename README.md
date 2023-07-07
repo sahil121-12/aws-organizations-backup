@@ -102,6 +102,10 @@ pip3 install -r requirement.txt
     ```bash
          python3 main.py --policytype
     ```
+     - To retrieve policies like scp,ai,backup,tag ,You can use multiple arrgument also in this like  :
+    ```bash
+         python3 main.py --policies scp,ai 
+    ```
      - To retrieve delegated admin details :
     ```bash
          python3 main.py --delegated
