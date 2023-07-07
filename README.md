@@ -86,13 +86,11 @@ pip3 install -r requirement.txt
 ```
 
 3. Execute `main.py` to run the project.Choose one of the following options:
-
-   
-     -To retrieve all details:
+    To retrieve all details:
     ```bash
          python3 main.py --account 
     ```
-4. Check the output files in the `output` directory for the generated results.
+5. Check the output files in the `output` directory for the generated results.
 
 
 
