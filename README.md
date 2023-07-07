@@ -86,6 +86,8 @@ pip3 install -r requirement.txt
 ```
 
 3. Execute `main.py` to run the project.Choose one of the following options:
+
+   
 -To retrieve all details:
 ```bash
 python3 main.py --account 
