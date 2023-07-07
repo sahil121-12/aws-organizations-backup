@@ -111,7 +111,8 @@ pip3 install -r requirement.txt
     ```bash
          python3 main.py --delegated
     ```
-    
+Note: You can use multiple arguments for the --policies option, separated by commas. For example:
+    python3 main.py --policies scp,ai
 
 5. Check the output files in the `output` directory for the generated results.
 
