@@ -20,15 +20,14 @@ AWS Organizations Backup is a tool designed to capture and backup important deta
   
 ## Permissions Required 
 
-To successfully execute the scripts and access the necessary resources, the following AWS Identity and Access Management (IAM) permissions should be assigned to the user or role executing the project:
+To run the scripts and access the required resources, make sure the user or role executing the project has the necessary permissions. You have two options:
 
-Ensure that the user or role executing the scripts has the appropriate permissions assigned to successfully interact with the AWS Organizations service and access the required resources.
+   1. Use the built-in "AWSOrganizationsReadOnlyAccess" policy.
+   2. Create a custom IAM policy with the required permissions.
 
-You have two options for granting the necessary permissions:
-1. Grant the user or role the built-in AWS managed policy called "AWSOrganizationsReadOnlyAccess."
-2. Create a custom IAM policy with the required permissions mentioned above.
+If you choose to create a custom policy, refer to the provided JSON document for the required permissions.
 
-If you choose to create a custom IAM policy, you can use the following JSON policy document as a reference:
+Ensure the executing user or role has these permissions to interact with AWS Organizations and access the resources needed.
 
 ```json
 {
