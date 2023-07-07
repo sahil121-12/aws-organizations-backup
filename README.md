@@ -88,8 +88,26 @@ pip3 install -r requirement.txt
 3. Execute `main.py` to run the project.Choose one of the following options:
     - To retrieve all details:
     ```bash
-         python3 main.py --account 
+         python3 main.py --all 
     ```
+    - To retrieve account details:
+    ```bash
+         python3 main.py --account
+    ```
+     - To retrieve enabled services:
+    ```bash
+         python3 main.py --service
+    ```
+     - To retrieve policy type enabled :
+    ```bash
+         python3 main.py --policytype
+    ```
+     - To retrieve delegated admin details :
+    ```bash
+         python3 main.py --delegated
+    ```
+    
+
 5. Check the output files in the `output` directory for the generated results.
 
 
