@@ -40,7 +40,6 @@ Ensure the executing user or role has these permissions to interact with AWS Org
                 "organizations:ListAccounts",
                 "organizations:ListAWSServiceAccessForOrganization",
                 "organizations:ListRoots",
-                "organizations:DescribePolicyType",
                 "organizations:ListPolicies",
                 "organizations:DescribePolicy",
                 "organizations:ListTargetsForPolicy",
@@ -68,6 +67,7 @@ Ensure the executing user or role has these permissions to interact with AWS Org
 Check out the following GIF to see the complete procedure of getting AWS Organizations Backup. 
 
 
+
 ![GIF](https://github.com/sahil121-12/aws-organizations-backup/blob/integration/File1.gif)
 
 
@@ -83,6 +83,7 @@ cd aws-organizations-backup
 ```bash
 pip3 install -r requirement.txt
 ```
+
 
 3. Execute `main.py` to run the project.Choose one of the following options:
     - To retrieve all details:
@@ -113,7 +114,8 @@ pip3 install -r requirement.txt
 Note: You can use multiple arguments for the --policies option, separated by commas. For example:
     python3 main.py --policies scp,ai
 
-5. Check the output files in the `output` directory for the generated results.
+
+4. Check the output files in the `output` directory for the generated results.
 
 
 
