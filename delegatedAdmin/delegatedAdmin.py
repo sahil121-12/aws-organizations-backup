@@ -1,35 +1,3 @@
-
-# import boto3
-
-# def list_delegated_administrators():
-#     # Create an Organizations clientcd
-    
-#     client = boto3.client('organizations')
-
-#     # List delegated administrators
-#     response = client.list_delegated_administrators()
-
-#     # Iterate through each delegated administrator
-#     for admin in response['DelegatedAdministrators']:
-#         account_id = admin['Id']
-#         account_name = admin['Name']
-
-       
-#         delegated_services_response = client.list_delegated_services_for_account(AccountId=account_id)
-
-#         # Extract the service names from the response
-#         service_names = [service['ServicePrincipal'] for service in delegated_services_response['DelegatedServices']]
-
-#         # Print the delegated administrator and associated services
-#         print(f"Delegated Administrator Account ID: {account_id}")
-#         print(f"Delegated Administrator Account Name: {account_name}")
-#         print(f"Services: {', '.join(service_names)}")
-#         print("")
-
-# # Call the function to list delegated administrators and their associated services
-# list_delegated_administrators()
-
-
 import boto3
 import json
 import os

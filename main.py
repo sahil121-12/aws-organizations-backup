@@ -1,3 +1,4 @@
+
 from enabledAccounts import accountDetail
 from enabledPolices import aiPolicies, backupPolicies, scpPolicies, tagPolicies, enabledPolicy
 from enabledServices import enableService
@@ -5,53 +6,48 @@ from delegatedAdmin import delegatedAdmin
 
 
 import click
-
 @click.command()
-@click.option('--account', is_flag=True, help='Run the account module')
-@click.option('--service', is_flag=True, help='Run the service module')
-@click.option('--policytype', is_flag=True, help='Run the policy module')
-@click.option('--delegated', is_flag=True, help='Run the delegated module')
-@click.option('--policies', multiple=True, type=click.Choice(['scp', 'tag', 'backup', 'ai','All']), default=[], help='Run specific policy modules')
-
-@click.option('--all', is_flag=True, help='Run the all module')
-
-
-
+@click.option('--account', '--a', is_flag=True, help='fetch account details')
+@click.option('--service', '--s', is_flag=True, help='fetch services enabled')
+@click.option('--policytype', '--p', is_flag=True, help='fetch policy type enabled')
+@click.option('--delegated', '--d', is_flag=True, help='fetch delegated admin details')
+@click.option('--policies', '--pol', type=str, default='', help='fetch specific policy and all policies')
+@click.option('--all', '--al', is_flag=True, help='fetch all details')
 
 def run_modules(account, service,policytype,delegated,policies,all):
     if account:
-        click.echo("Running account module")
+        click.echo("Getting account details...")
         account_module_function()
     
     if service:
-        click.echo("Running service module")
+        click.echo("Getting services enabled...")
         service_module_function()
     if policytype:
-        click.echo("Running policytype module")
+        click.echo("Getting Policy type enabled...")
         policytype_module_function()
     if delegated:
-        click.echo("Running delegated module")
+        click.echo("Getting delegated admin  details...")
         delegatedadmin_module_function()
     
-
-
     if policies:
-        click.echo("Running policy modules: {}".format(', '.join(policies)))
+        policies = policies.split(',')
+        click.echo("Getting policy detail for: {}".format(', '.join(policies)))
         for policy in policies:
+            policy = policy.strip()
             if policy == 'scp':
-                click.echo("Running SCP policy module")
+                click.echo("Getting SCP policies...")
                 scp_policies_module_function()
             elif policy == 'tag':
-                click.echo("Runn tag_policies_module_function()ing Tag policy module")
-               
+                click.echo("Getting Tag policies...")
+                tag_policies_module_function()
             elif policy == 'backup':
-                click.echo("Running Backup policy module")
+                click.echo("Getting Backup policies...")
                 backup_policies_module_function()
             elif policy == 'ai':
-                click.echo("Running AI policy module")
+                click.echo("Getting AI policies...")
                 ai_policies_module_function()
             elif policy == 'All':
-                click.echo("Running All policy module")
+                click.echo("Getting All policies details...")
                 scp_policies_module_function()
                 tag_policies_module_function()
                 backup_policies_module_function()
@@ -59,10 +55,10 @@ def run_modules(account, service,policytype,delegated,policies,all):
             else:
                 click.echo(f"Unknown policy module: {policy}")
 
-    
-    
+
+
     if all:
-        click.echo("Running all  module")
+        click.echo("Getting All details...")
         account_module_function()
         service_module_function()
         policytype_module_function()
@@ -72,25 +68,25 @@ def run_modules(account, service,policytype,delegated,policies,all):
 
 
 def account_module_function():
-    click.echo("This is the account module")
+    
     accountDetail.get_account_details()
 
 def service_module_function():
-    click.echo("This is the service module")
+    
     enableService.list_enabled_services()
     
 
 
 def policytype_module_function():
-    click.echo("This is the account module")
+    
     enabledPolicy.get_enabled_policy_types()
 
 def delegatedadmin_module_function():
-    click.echo('Running delegatedadmin...')
+    
     delegatedAdmin.list_delegated_administrators()
 
 def allpolicies_module_function():
-    click.echo('Running all policies...')
+    
     def main():
          aiPolicies.list_ai_policies()
          backupPolicies.list_backup_policies()
@@ -112,9 +108,9 @@ def backup_policies_module_function():
 
 def ai_policies_module_function():
     
-    aiPolicies.list_ai_policies()
+   aiPolicies.list_ai_policies()
+
+
     
 run_modules()
-
-
 
