@@ -45,7 +45,7 @@ def get_enabled_policy_types():
 
     # Specify the output folder path
     current_directory = os.getcwd()
-    output_folder = os.path.join(current_directory, 'output', 'enabledPolicies')
+    output_folder = os.path.join(current_directory, 'output', 'policiesEnabled')
 
     # Create the output folder if it doesn't exist
     os.makedirs(output_folder, exist_ok=True)

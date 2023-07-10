@@ -62,8 +62,8 @@ def list_enabled_services():
         os.makedirs(output_folder)
 
     # Specify the output file paths
-    json_file_path = os.path.join(output_folder, 'serviceEnabled', 'enabled_services.json')
-    csv_file_path = os.path.join(output_folder, 'serviceEnabled', 'enabled_services.csv')
+    json_file_path = os.path.join(output_folder, 'servicesEnabled', 'enabled_services.json')
+    csv_file_path = os.path.join(output_folder, 'servicesEnabled', 'enabled_services.csv')
 
     # Write the enabled services to a JSON file
     with open(json_file_path, 'w') as file:
